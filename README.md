@@ -3,5 +3,5 @@
 
 Node.js & Express
 
-Portfolio website to showcase Treehouse projects. The site will contain a modern landing page, an about page, and a series of project pages.
+Portfolio website to showcase Treehouse projects. The site contains a modern landing page, an about page, and a series of project pages.
 
