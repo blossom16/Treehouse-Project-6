@@ -1,0 +1,52 @@
+{ 
+    "projects": [ 
+{
+    "id": "0",
+    "project_name": "Random Quote Generator",
+    "description": "Displays random famous quotes each time a button is clicked.",
+    "technologies": ["JavaScript", "CSS", "HTML"],
+    "live_link": "https://blossom16.github.io/Techdegree-Project--1/",
+    "github_link": "https://github.com/blossom16/Techdegree-Project--1",
+    "image_urls": ["/static/images/randomquote.png", "/static/images/randomquote2.png"]
+ } ,
+{
+    "id": 1,
+    "project_name": "Data Pagination and Filtering",
+    "description": "Used pagination to add usability of a web page",
+    "technologies": ["JavaScript", "CSS", "HTML"],
+    "live_link": "https://blossom16.github.io/Techdegree-Project--2/",
+    "github_link": "https://github.com/blossom16/Techdegree-Project--2",
+    "image_urls": ["/static/images/pagination.png", "/static/images/pagination2.png"]
+},
+{
+    "id": 2,
+    "project_name": "Interactive Form",
+    "description": "Interactive registration form with conditional behavior",
+    "technologies": ["JavaScript", "CSS", "HTML"],
+    "live_link": "https://blossom16.github.io/Treehouse--Project-3.2/",
+    "github_link": "https://github.com/blossom16/Treehouse--Project-3.2",
+    "image_urls": ["/static/images/interactiveform.png", "/static/images/interactiveform2.png"]
+},
+{
+    "id": 3,
+    "project_name": "Phrase Hunter Game",
+    "description": "A browser-based guessing game",
+    "technologies": ["JavaScript", "CSS", "HTML"],
+    "live_link": "https://blossom16.github.io/Treehouse-Project--4/",
+    "github_link": "https://github.com/blossom16/Treehouse-Project--4",
+    "image_urls": ["/static/images/phrasehunter.png", "/static/images/phrasehunter2.png"]
+},
+{
+    "id": 4,
+    "project_name": "Employee Directory",
+    "description": "Employee directory using API requests",
+    "technologies": ["JavaScript", "CSS", "HTML"],
+    "live_link":  "hhttps://blossom16.github.io/Treehouse-Project--5/",
+    "github_link": "https://github.com/blossom16/Treehouse-Project--5",
+    "image_urls": ["/static/images/employeedirectory.png", "/static/images/employeeirectory2.png"]
+}
+
+
+] 
+
+}
