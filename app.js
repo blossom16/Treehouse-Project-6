@@ -41,5 +41,9 @@ app.use((req, res, next) => {
 
 //global errors
 app.use((err, req, res, next) => {
-    res.status(err.status || 500).render("error", { err });
-  });
+    res.locals.error = err
+    const status = err.status || 500
+    res.status(status);
+    console.log(`An error has occured: ${status}`);
+    res.render('error');
+})
