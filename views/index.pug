@@ -4,11 +4,11 @@ block content
 
   article.portfolio-intro
 
-    //- Replace with your own heading like 'My Portfolio', or 'Hey, Potential Employers', or 'Let's make the web great together!' 
-    h1 Heading
+    
+    h1 My Portfolio
 
-    //- Replace with a description for your portfolio, what this project is, it's purpose, what it's supposed to accomplish, etc. 
-    p Portfolio description
+    
+    p Welcome! Here you'll see Javacript projects I created while learning through Treehouse.
 
 
   article.portfolio-project-thumbs
@@ -26,3 +26,9 @@ block content
             img.thumbnail(src='https://placehold.it/550x550', alt='')
             h5 My Site
 
+each project in projects
+       
+        .cell
+          a(href=`/projects/${project.id}`)
+            img.thumbnail(src=`${project.image_urls[0]}`, alt=`${project.project_name}`)
+            h5= project.project_name

@@ -1,7 +1,7 @@
 { 
     "projects": [ 
 {
-    "id": "0",
+    "id": 0,
     "project_name": "Random Quote Generator",
     "description": "Displays random famous quotes each time a button is clicked.",
     "technologies": ["JavaScript", "CSS", "HTML"],
