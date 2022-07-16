@@ -1,49 +1,55 @@
-//Express
-const express = require("express");
+const express = require('express');
+//const router = express.Router();
 const app = express();
+const { projects } = require ("./data.json")
 
-//add data.json file
-const { projects } = require("./data.json");
+//sets up the view engine to pug
+app.set('view engine', 'pug');
+//serves items from the public folder
+app.use('/static', express.static('public'));
 
-//Middleware
-app.set("view engine", "pug");
-app.use("/static", express.static("public"));
-
-//starts server
-app.listen(3000, () => {
-  console.log("The application is listening on localhost 3000!");
-});
-
-//Routes
-//index
-app.get("/", (req, res, next) => {
-  res.render("index", { projects });
-});
-//about 
-app.get("/about", (req, res, next) => {
-  res.render("about");
-});
-
-//dynamic project routes
-app.get("/projects/:id", (req, res, next) => {
-  const projectId = req.params.id;
-  const project = projects.find(({ id }) => id === +projectId);
-  res.render('project', { project });
-});
-
-//Error handlers
-//404 Error
-app.use((req, res, next) => {
-  const err = new Error("Page not found");
-  err.status = 404;
-  next(err);
-});
-
-//global errors
-app.use((err, req, res, next) => {
-    res.locals.error = err
-    const status = err.status || 500
-    res.status(status);
-    console.log(`An error has occured: ${status}`);
-    res.render('error');
+//render the home route
+app.get('/', (req, res, next) => {
+    res.render('index', { projects });
 })
+
+//renders the about route
+app.get('/about', (req, res) => {
+    res.render('about')
+  })
+
+//dynamically renders the project routes to match projects also produces error if route doesn't match a project id
+app.get('/projects/:id', (req, res, next) => {
+    const { id } = req.params;
+    const project = projects[id];
+    if(project) {
+        res.render('project', { project })
+    } else {
+        const err = new Error;
+        err.status = 404;
+        err.message = `Cannot find project ${id}`;
+        next(err)
+    }
+})
+
+
+//404 error handling 
+app.use(( req, res, next) => {
+  const err = new Error;
+  err.status = 404;
+  //err.message = `Cannot find the requested webpage`;
+  next(err)
+  });
+
+//global error handling
+  app.use((err, req, res, next) => {
+    err.message = err.message || "There was a server error!";
+    err.status = (err.status || 500);
+    console.log(`You have hit a ${err.status} error!`);
+    res.send(`Error Code: ${err.status} : ${err.message}`);
+  });
+
+  
+app.listen(3000, () => {
+    console.log('The application is running on localhost:3000!')
+});

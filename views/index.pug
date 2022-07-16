@@ -8,7 +8,7 @@ block content
     h1 My Portfolio
 
     
-    p Welcome! Here you'll see Javacript projects I created while learning through Treehouse.
+    p Welcome! Here you'll see Javacript projects I created while learning on Treehouse.
 
 
   article.portfolio-project-thumbs
@@ -26,9 +26,9 @@ block content
             img.thumbnail(src='https://placehold.it/550x550', alt='')
             h5 My Site
 
-each project in projects
+      each project in projects
        
         .cell
           a(href=`/projects/${project.id}`)
-            img.thumbnail(src=`${project.image_urls[0]}`, alt=`${project.project_name}`)
-            h5= project.project_name
+            img.thumbnail(src=`${project.image_urls[1]}`, alt=`${project.project_name}`)
+            h5= `${project.project_name}` 
