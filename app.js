@@ -1,7 +1,7 @@
 const express = require('express');
 //const router = express.Router();
 const app = express();
-const { projects } = require ("./data.json")
+const { projects } = require ("./data.json");
 
 //sets up the view engine to pug
 app.set('view engine', 'pug');
@@ -15,7 +15,7 @@ app.get('/', (req, res, next) => {
 
 //renders the about route
 app.get('/about', (req, res) => {
-    res.render('about')
+    res.render('about');
   })
 
 //dynamically renders the project routes to match projects also produces error if route doesn't match a project id
@@ -28,7 +28,7 @@ app.get('/projects/:id', (req, res, next) => {
         const err = new Error;
         err.status = 404;
         err.message = `Cannot find project ${id}`;
-        next(err)
+        next(err);
     }
 })
 
