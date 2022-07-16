@@ -13,7 +13,7 @@ app.get('/', (req, res, next) => {
 })
 
 //renders the about route/page
-app.get('/about', (req, res) => {
+app.get('/about', (req, res,) => {
     res.render('about');
   })
 
@@ -42,7 +42,7 @@ app.use(( req, res, next) => {
 //global error handling
 app.use((err, req, res, next) => {
     console.error(err.stack)
-    res.status(err.status).send('Something broke!');
+    res.status(err.status || 500).send('Something broke!');
   })
 
 
