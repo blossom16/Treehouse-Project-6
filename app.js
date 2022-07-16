@@ -33,7 +33,7 @@ app.get('/projects/:id', (req, res, next) => {
 })
 
 
-//404 error handling 
+//404 error handling
 app.use(( req, res, next) => {
   const err = new Error;
   err.status = 404;
@@ -42,14 +42,12 @@ app.use(( req, res, next) => {
   });
 
 //global error handling
-  app.use((err, req, res, next) => {
-    err.message = err.message || "There was a server error!";
-    err.status = (err.status || 500);
-    console.log(`You have hit a ${err.status} error!`);
-    res.send(`Error Code: ${err.status} : ${err.message}`);
-  });
+app.use((err, req, res, next) => {
+    console.error(err.stack)
+    res.status(err.status).send('Something broke!');
+  })
 
-  
+
 app.listen(3000, () => {
-    console.log('The application is running on localhost:3000!')
+    console.log('The application is running on localhost:3000!');
 });

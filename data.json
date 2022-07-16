@@ -1,5 +1,5 @@
-{ 
-    "projects": [ 
+{
+    "projects": [
 {
     "id": 0,
     "project_name": "Random Quote Generator",
@@ -43,10 +43,10 @@
     "technologies": ["JavaScript", "CSS", "HTML"],
     "live_link":  "hhttps://blossom16.github.io/Treehouse-Project--5/",
     "github_link": "https://github.com/blossom16/Treehouse-Project--5",
-    "image_urls": ["/static/images/employeedirectory.png", "/static/images/employeeirectory2.png"]
+    "image_urls": ["/static/images/employeedirectory.png", "/static/images/employeedirectory2.png"]
 }
 
 
-] 
+]
 
 }
