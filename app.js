@@ -1,24 +1,23 @@
 const express = require('express');
-//const router = express.Router();
 const app = express();
 const { projects } = require ("./data.json");
 
 //sets up the view engine to pug
 app.set('view engine', 'pug');
-//serves items from the public folder
+//files being requested
 app.use('/static', express.static('public'));
 
-//render the home route
+//render the home page
 app.get('/', (req, res, next) => {
     res.render('index', { projects });
 })
 
-//renders the about route
+//renders the about route/page
 app.get('/about', (req, res) => {
     res.render('about');
   })
 
-//dynamically renders the project routes to match projects also produces error if route doesn't match a project id
+//dynamically renders the project routes
 app.get('/projects/:id', (req, res, next) => {
     const { id } = req.params;
     const project = projects[id];
@@ -37,7 +36,6 @@ app.get('/projects/:id', (req, res, next) => {
 app.use(( req, res, next) => {
   const err = new Error;
   err.status = 404;
-  //err.message = `Cannot find the requested webpage`;
   next(err)
   });
 
