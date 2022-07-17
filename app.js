@@ -45,7 +45,7 @@ app.use((err, req, res, next) => {
     res.status(err.status || 500).send('Something broke!');
   })
 
-
+//port
 app.listen(3000, () => {
     console.log('The application is running on localhost:3000!');
 });
